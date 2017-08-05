@@ -1,0 +1,129 @@
+html {
+  overflow-y: scroll;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #99ffbb;
+  background-image: -webkit-radial-gradient(#ffffff, #99ffbb);
+  background-image: radial-gradient(#ffffff, #99ffbb);
+  line-height: 1.4;
+}
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.section {
+  width: 100%;
+  margin-bottom: 20px;
+  background: #00e64d;
+  border-radius: 2px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+  font-size: 22px;
+}
+
+.section-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.section-header h2 {
+  padding-left: 10px;
+  margin: 0;
+}
+.section-header:hover .toggle {
+  background: #00802b;
+}
+.section-header:hover .toggle span, .section-header:hover .toggle span:before, .section-header:hover .toggle span:after {
+  background: white;
+}
+
+.content {
+  display: none;
+  padding: 0 10px 10px 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 100px;
+  height: 75px;
+  border-radius: 2px;
+  background: #00b33c;
+  margin-left: auto;
+  cursor: pointer;
+  -webkit-transition: .25s ease;
+  transition: .25s ease;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+span, span:before, span:after {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #00802b;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+span {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+span:before, span:after {
+  position: absolute;
+  display: block;
+  content: '';
+}
+span:before {
+  left: -25px;
+  top: 0;
+  bottom: 0;
+}
+span:after {
+  left: 25px;
+}
+
+.section-header.is-active .toggle {
+  box-shadow: none;
+}
+.section-header.is-active .toggle span {
+  background: transparent;
+}
+.section-header.is-active .toggle span:before, .section-header.is-active .toggle span:after {
+  border-radius: 10px;
+  width: 50px;
+  height: 8px;
+  left: -16px;
+  top: 4px;
+}
+.section-header.is-active .toggle span:before {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+.section-header.is-active .toggle span:after {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
